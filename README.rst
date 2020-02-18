@@ -26,7 +26,7 @@ No fancy stuff, just iCalendar (``.ics``) events reading.
 
 * Requires Python 3.6+;
 * Uses ``namedtuple`` for event representation;
-* Features iterative event reading to minimize memory usage.
+* Features iterative event reading to be fast and minimize memory usage.
 
 
 API
