@@ -2,8 +2,8 @@ icalendar_light changelog
 =========================
 
 
-Unreleased
-----------
+v0.2.0 [2020-02-23]
+-------------------
 + 'Event' object now contains 'dt_created', 'dt_modified' and 'sequence' attributes.
 * 'Event' object made IDE-friendlier.
 * Dateutil is now installed automatically.
