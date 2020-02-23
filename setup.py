@@ -40,8 +40,10 @@ setup(
     include_package_data=True,
     zip_safe=False,
 
-    install_requires=[],
-    setup_requires=['python-dateutil'] + (['pytest-runner'] if 'test' in sys.argv else []) + [],
+    install_requires=[
+        'python-dateutil',
+    ],
+    setup_requires=[] + (['pytest-runner'] if 'test' in sys.argv else []) + [],
 
     extras_require={
         'cli': ['click'],

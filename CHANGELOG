@@ -2,6 +2,11 @@ icalendar_light changelog
 =========================
 
 
+Unreleased
+----------
+* Dateutil is now installed automatically.
+
+
 v0.1.0 [2020-02-18]
 -------------------
 + Basic functionality.
