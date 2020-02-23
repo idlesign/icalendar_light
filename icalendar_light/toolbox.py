@@ -22,7 +22,17 @@ class Calendar:
         'RRULE': ('recurrence', cast_recurrence),
     }
 
-    _event_attrs = [key for key, _ in _key_map.values()]
+    _event_attrs = [
+        'uid',
+        'status',
+        'dt_start',
+        'dt_end',
+        'description',
+        'summary',
+        'location',
+        'recurrence',
+    ]
+
     Event = namedtuple('Event', _event_attrs)
 
     @classmethod
@@ -34,11 +44,11 @@ class Calendar:
         """
         location = event.location
         if location:
-           location = f' [{location}]'
+            location = f' [{location}]'
 
         status = event.status
         if status:
-           status = f' [{status}]'
+            status = f' [{status}]'
 
         out = f"{event.dt_start} - {event.dt_end} | {event.summary}{location or ''}{status or ''}"
 

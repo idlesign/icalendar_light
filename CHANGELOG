@@ -4,6 +4,7 @@ icalendar_light changelog
 
 Unreleased
 ----------
+* 'Event' object made IDE-friendlier.
 * Dateutil is now installed automatically.
 
 
