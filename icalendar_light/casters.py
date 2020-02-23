@@ -43,3 +43,14 @@ def cast_default(*, value: str, params: str, shared: dict) -> str:
 
     """
     return value.replace(r'\,', ',')
+
+
+def cast_int(*, value: str, params: str, shared: dict) -> int:
+    """Casts value to integer.
+
+    :param value: Current value.
+    :param params: Additional value-related parameters.
+    :param shared: Global shared parameters.
+
+    """
+    return int(value)

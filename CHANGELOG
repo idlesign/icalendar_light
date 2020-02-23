@@ -4,6 +4,7 @@ icalendar_light changelog
 
 Unreleased
 ----------
++ 'Event' object now contains 'dt_created', 'dt_modified' and 'sequence' attributes.
 * 'Event' object made IDE-friendlier.
 * Dateutil is now installed automatically.
 

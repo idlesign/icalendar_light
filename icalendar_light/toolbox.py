@@ -6,14 +6,17 @@ from typing import Generator, Union
 
 from dateutil.tz import tzlocal
 
-from .casters import cast_date, cast_default, cast_recurrence
+from .casters import cast_date, cast_default, cast_recurrence, cast_int
 
 
 class Calendar:
 
     _key_map = {
         'UID': ('uid', None),
+        'SEQUENCE': ('sequence', cast_int),
         'STATUS': ('status', None),  # CONFIRMED, TENTATIVE, CANCELLED
+        'CREATED': ('dt_created', cast_date),
+        'LAST-MODIFIED': ('dt_modified', cast_date),
         'DTSTART': ('dt_start', cast_date),
         'DTEND': ('dt_end', cast_date),
         'DESCRIPTION': ('description', None),
@@ -24,7 +27,10 @@ class Calendar:
 
     _event_attrs = [
         'uid',
+        'sequence',
         'status',
+        'dt_created',
+        'dt_modified',
         'dt_start',
         'dt_end',
         'description',
