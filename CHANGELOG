@@ -2,8 +2,8 @@ icalendar_light changelog
 =========================
 
 
-Unreleased
-----------
+v1.0.0 [2020-10-31]
+-------------------
 * Celebrating 1.0.0.
 * Fixed deprecation warning.
 
