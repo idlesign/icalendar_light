@@ -2,6 +2,11 @@ icalendar_light changelog
 =========================
 
 
+Unreleased
+----------
+* Fixed deprecation warning.
+
+
 v0.2.0 [2020-02-23]
 -------------------
 + 'Event' object now contains 'dt_created', 'dt_modified' and 'sequence' attributes.

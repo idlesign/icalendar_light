@@ -1,8 +1,8 @@
-from collections import namedtuple, Iterable
+from collections import namedtuple
 from datetime import datetime, timedelta
 from functools import partial
 from pathlib import Path
-from typing import Generator, Union
+from typing import Generator, Union, Iterable
 
 from dateutil.tz import tzlocal
 
