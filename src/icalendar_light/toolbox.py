@@ -64,7 +64,7 @@ class Calendar:
     def iter_events_from_file(
         cls,
         filepath: Union[Path, str],
-        upcoming_days: int = None
+        upcoming_days: int | None = None
     ) -> Generator[Event, None, None]:
         """Yields event objects from a given file.
 
@@ -78,7 +78,7 @@ class Calendar:
         else:
             func = partial(cls.iter_events_upcoming, days_forward=upcoming_days)
 
-        with open(f'{filepath}') as f:
+        with Path(f'{filepath}').open() as f:
             yield from func(f)
 
     @classmethod

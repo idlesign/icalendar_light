@@ -1,12 +1,10 @@
-#!/usr/bin/env python
-import sys
 import click
-from icalendar_light import VERSION_STR
+from icalendar_light import VERSION
 from icalendar_light.toolbox import Calendar
 
 
 @click.group()
-@click.version_option(version=VERSION_STR)
+@click.version_option(version=VERSION)
 def entry_point():
     """icalendar_light command line utilities."""
 

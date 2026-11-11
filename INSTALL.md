@@ -1,31 +1,25 @@
-icalendar_light installation
-============================
+# icalendar_light installation
 
+Python `pip` package is required to install `icalendar_light`.
 
-Python ``pip`` package is required to install ``icalendar_light``.
+## From sources
 
+Use the following command line to install `icalendar_light` from sources directory (containing `pyproject.toml`):
 
-From sources
-------------
+```shell
+pip install .
+```
 
-Use the following command line to install ``icalendar_light`` from sources directory (containing setup.py):
+## From PyPI
 
-    pip install .
+Alternatively you can install `icalendar_light` from PyPI:
 
-or
-
-    python setup.py install
-
-
-From PyPI
----------
-
-Alternatively you can install ``icalendar_light`` from PyPI:
-
-    pip install icalendar_light
-
+```shell
+pip install icalendar_light
+```
 
 Use `-U` flag for upgrade:
 
-    pip install -U icalendar_light
-
+```shell
+pip install -U icalendar_light
+```
