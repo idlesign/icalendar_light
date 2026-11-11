@@ -1,3 +1,0 @@
-[run]
-source = icalendar_light/
-omit = icalendar_light/cli.py
