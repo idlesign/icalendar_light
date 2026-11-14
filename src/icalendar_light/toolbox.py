@@ -1,7 +1,9 @@
 from collections import namedtuple
 from datetime import datetime, timedelta
+import io
 from functools import partial
 from pathlib import Path
+from urllib.request import urlopen
 from typing import Generator, Union, Iterable
 
 from dateutil.tz import tzlocal
@@ -79,6 +81,27 @@ class Calendar:
             func = partial(cls.iter_events_upcoming, days_forward=upcoming_days)
 
         with Path(f'{filepath}').open() as f:
+            yield from func(f)
+
+    @classmethod
+    def iter_events_from_url(
+        cls,
+        url: str,
+        upcoming_days: int | None = None
+    ) -> Generator[Event, None, None]:
+        """Yields event objects from a given URL.
+
+        :param url:
+        :param upcoming_days:
+
+        """
+        if upcoming_days is None:
+            func = cls.iter_events
+
+        else:
+            func = partial(cls.iter_events_upcoming, days_forward=upcoming_days)
+
+        with io.TextIOWrapper(urlopen(url), encoding="utf-8") as f:
             yield from func(f)
 
     @classmethod

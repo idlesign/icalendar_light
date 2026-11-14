@@ -1,3 +1,4 @@
+import io
 from itertools import islice
 from pathlib import Path
 
@@ -53,3 +54,18 @@ def test_basic(dir_fixtures):
         assert event.dt_created
         assert event.dt_modified
         assert event.sequence >= 0
+
+
+def test_iter_events_from_url(dir_fixtures, monkeypatch):
+
+    contents = (dir_fixtures / "cut.ics").read_bytes()
+
+    def fake_urlopen(url):
+        assert url == "https://example.com/cut.ics"
+        return io.BytesIO(contents)
+
+    monkeypatch.setattr("icalendar_light.toolbox.urlopen", fake_urlopen)
+
+    events = list(Calendar.iter_events_from_url("https://example.com/cut.ics"))
+
+    assert events

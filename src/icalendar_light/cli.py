@@ -10,12 +10,18 @@ def entry_point():
 
 
 @entry_point.command()
-@click.argument('filepath', type=click.Path(dir_okay=False))
+@click.argument('source')
 @click.option('--days', help='Number of days forward to show events', default=60)
-def upcoming(filepath, days):
-    """Shows upcoming events from a given calendar file."""
+def upcoming(source, days):
+    """Shows upcoming events from a given calendar file or URL."""
 
-    for event in Calendar.iter_events_from_file(filepath, upcoming_days=days):
+    if source.startswith(("http://", "https://")):
+        events = Calendar.iter_events_from_url(source, upcoming_days=days)
+
+    else:
+        events = Calendar.iter_events_from_file(source, upcoming_days=days)
+
+    for event in events:
         click.secho(Calendar.event_stringify(event))
 
 
