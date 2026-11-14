@@ -1,5 +1,8 @@
 # icalendar_light changelog
 
+### Unreleased
+* ++ Added iter_events_from_url to read calendars from URLs; the upcoming CLI command now accepts URLs in addition to file paths (close #1).
+
 ### v1.0.0 [2020-10-31]
 * ** Celebrating 1.0.0.
 * ** Fixed deprecation warning.
